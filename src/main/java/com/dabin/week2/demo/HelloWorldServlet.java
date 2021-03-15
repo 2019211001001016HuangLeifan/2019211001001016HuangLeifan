@@ -1,4 +1,4 @@
-package com.dabing.week2.demo;
+package com.dabin.week2.demo;
 
 import com.sun.media.sound.InvalidDataException;
 
