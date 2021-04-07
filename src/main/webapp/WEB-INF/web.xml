@@ -64,7 +64,7 @@
     <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.dabin.week5.demo.LoginServlet</servlet-class>
-    </servlet>s
+    </servlet>
     <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/login</url-pattern>
