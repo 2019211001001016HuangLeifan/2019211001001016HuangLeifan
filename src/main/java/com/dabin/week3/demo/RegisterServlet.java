@@ -71,8 +71,6 @@ public class RegisterServlet extends HttpServlet {
             printWriter.println("<br/>birthdate:"+birthdate);
             printWriter.println("<br/></body>");
             printWriter.println("</html>");*/
-            /*request.setAttribute("rsname",rs);
-            request.getRequestDispatcher("userList.jsp").forward(request,response);*/
 
             response.sendRedirect("login.jsp");
 
