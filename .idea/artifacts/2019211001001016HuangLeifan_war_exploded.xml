@@ -13,6 +13,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="2019211001001016HuangLeifan" />
         </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="HuangLeifan2019211001001016-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="2019211001001016HuangLeifan" />
+          </element>
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/HuangLeifan2019211001001016-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
