@@ -17,6 +17,8 @@
           <element id="archive" name="HuangLeifan2019211001001016-1.0-SNAPSHOT.jar">
             <element id="module-output" name="2019211001001016HuangLeifan" />
           </element>
+          <element id="library" level="project" name="Maven: com.microsoft.sqlserver:mssql-jdbc:8.2.2.jre8" />
+          <element id="library" level="project" name="Maven: commons-dbutils:commons-dbutils:1.7" />
         </element>
       </element>
       <element id="directory" name="META-INF">

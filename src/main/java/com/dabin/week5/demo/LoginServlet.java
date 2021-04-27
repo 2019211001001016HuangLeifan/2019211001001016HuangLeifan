@@ -1,15 +1,15 @@
 package com.dabin.week5.demo;
+
 import com.dabin.dao.UserDao;
 import com.dabin.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
     Connection con = null;
@@ -40,8 +40,30 @@ public class LoginServlet extends HttpServlet {
         try {
             User user= userDao.findByUsernamePassword(con ,name,password);
             if(user!=null){
-                request.setAttribute("user",user);
-                request.getRequestDispatcher("WEB-INF/views/userinfo.jsp").forward(request,response);
+                //week 8
+                /**Cookie c=new Cookie(name:"sessionid",value:""+user.getID())
+                c.setMaxAge(10*60);
+                response.addCookie(c);**/
+                String rememberMe=request.getParameter("rememberMe");
+                if (rememberMe!=null &&rememberMe.equals("1"))
+                {
+                    Cookie usernameCookie = new Cookie("cUsername",user.getUsername());
+                    Cookie passwordCookie= new Cookie("cPassword",user.getPassword());
+                    Cookie rememberMeCookie = new Cookie("cRememberMe",request.getParameter("rememberMe"));
+                    usernameCookie.setMaxAge(5);
+                    passwordCookie.setMaxAge(5);
+                    rememberMeCookie.setMaxAge(5);
+                    response.addCookie(usernameCookie);
+                    response.addCookie(passwordCookie);
+                    response.addCookie(rememberMeCookie);
+
+                }
+                HttpSession session=   request.getSession();
+                System.out.println("session id-->"+session.getId());
+                session.setMaxInactiveInterval(10);
+                session.setAttribute("user",user);
+
+                request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
             }else{
                 request.setAttribute("msg" ,"username or password Error");
                 request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response); }

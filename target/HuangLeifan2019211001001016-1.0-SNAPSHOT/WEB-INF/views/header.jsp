@@ -45,12 +45,7 @@
        <font size="18" color="red"> Guest</font>
    </font></td> </tr>
   <tr height="20"><td align="right">
-      <%
-          if (session.getAttribute("user")!=null){
-      %>
-
-   <br> <a href="logout">Logout</a>
-      <%}%>
+   <br> <a href="#">Logout</a>
   <br><a href="#">My Cart</a><br/>
 <a href="register.jsp">Register Here</a>
   </td></tr>
