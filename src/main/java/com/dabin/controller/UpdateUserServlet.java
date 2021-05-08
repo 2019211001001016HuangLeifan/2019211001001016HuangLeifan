@@ -30,7 +30,6 @@ public class UpdateUserServlet extends HttpServlet {
         gender = request.getParameter("gender");
         String date = request.getParameter("birthday");
         User user = new User(id, name, password, email, gender, date);
-
         IUserDao iUserDao = new UserDao();
         try {
             Connection con = null;

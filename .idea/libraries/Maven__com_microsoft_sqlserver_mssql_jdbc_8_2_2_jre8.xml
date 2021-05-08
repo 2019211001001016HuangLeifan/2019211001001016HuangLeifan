@@ -9,5 +9,8 @@
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/8.2.2.jre8/mssql-jdbc-8.2.2.jre8-sources.jar!/" />
     </SOURCES>
+    <excluded>
+      <root url="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/8.2.2.jre8/mssql-jdbc-8.2.2.jre8.jar!/" />
+    </excluded>
   </library>
 </component>
