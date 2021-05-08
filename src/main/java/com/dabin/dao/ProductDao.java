@@ -148,9 +148,11 @@ public class ProductDao implements  IProductDao{
         List<Product> list=new ArrayList<Product>();
         try {
             String queryString = "select Picture from Product where ProductId =?";
-            PreparedStatement pt = con.prepareStatement(queryString);
-            pt.setInt(1,productId);
-            ResultSet rs= pt.executeQuery();
+            ResultSet rs;
+            try (PreparedStatement pt = con.prepareStatement(queryString)) {
+                pt.setInt(1, productId);
+                rs = pt.executeQuery();
+            }
             while(rs.next()){
                 Product product = new Product();
 
