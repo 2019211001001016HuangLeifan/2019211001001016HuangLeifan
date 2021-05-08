@@ -12,10 +12,13 @@
   User u = (User) session.getAttribute("user");
 %>
 <table border="1">
-    <tr><td>Username:</td><td><%=u.getUsername()%></td></tr>
-    <tr><td>Password:</td><td><%=u.getPassword()%></td></tr>
-    <tr><td>Email:</td><td><%=u.getEmail()%></td></tr>
-    <tr><td>Gender:</td><td><%=u.getGender()%></td></tr>
-    <tr><td>Birthdate:</td><td><%=u.getBirthdate()%></td></tr>
+    <tr><td>username:</td><td><%=u.getUsername()%></td></tr>
+    <tr><td>password:</td><td><%=u.getPassword()%></td></tr>
+    <tr><td>email:</td><td><%=u.getEmail()%></td></tr>
+    <tr><td>gender:</td><td><%=u.getGender()%></td></tr>
+    <tr><td>birthdate:</td><td><%=u.getBirthdate()%></td></tr>
+    <tr>
+        <a href="updateUser?id=<%=u.getID()%>">updateUser<a/></a>tr>
+    </tr>
 </table>
 <%@include file="footer.jsp"%>

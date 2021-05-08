@@ -32,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String email = request.getParameter("email");
         String gender = request.getParameter("gender");
-        String birthdate = request.getParameter("birthdate");
+        String birthdate = request.getParameter("birthDate");
 
 
 
@@ -71,8 +71,7 @@ public class RegisterServlet extends HttpServlet {
             printWriter.println("<br/>birthdate:"+birthdate);
             printWriter.println("<br/></body>");
             printWriter.println("</html>");*/
-
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login");
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
