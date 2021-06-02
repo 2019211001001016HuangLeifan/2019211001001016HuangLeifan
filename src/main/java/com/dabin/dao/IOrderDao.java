@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.dabin.model.Item;
+import com.dabin.model.Order;
 import com.dabing.model.Item;
 import com.dabing.model.Order;
 
@@ -135,7 +136,7 @@ public interface IOrderDao {
 	/**
 	 * Select All List of Order
 	 * @param con
-	 * @return  List of com.dabing.model.Order 
+	 * @return  List of com.dabing.model.Order
 	 */
 	List<Order> findAll(Connection con);
 
