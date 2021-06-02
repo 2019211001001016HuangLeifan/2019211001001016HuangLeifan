@@ -11,11 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.List;
-
-import lombok.extern.log4j.Log4j;
-import org.apache.log4j.Logger;
-
-@Log4j
 @WebServlet("/orderDetails")
 public class OrderDetailsServlet extends HttpServlet {
     private Connection con = null;
